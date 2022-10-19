@@ -1,5 +1,4 @@
 import os
-from dotenv import load_dotenv
 
 import requests
 from requests.adapters import HTTPAdapter, Retry
@@ -8,7 +7,6 @@ from flask import Flask, request, render_template, abort
 
 from db import Database
 
-load_dotenv()
 API_KEY = os.getenv("API_KEY")
 
 app = Flask(__name__)
