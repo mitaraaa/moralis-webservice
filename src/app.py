@@ -15,7 +15,7 @@ db = Database(
     os.getenv("LOGIN"),
     os.getenv("PASSWORD"),
     os.getenv("URL"),
-    os.getenv("PORT"),
+    os.getenv("DBPORT"),
 )
 
 session = requests.Session()
