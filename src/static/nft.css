@@ -1,0 +1,259 @@
+@import url("./style.css");
+
+#main {
+    justify-content: start;
+    padding: 64px;
+    width: 1200px;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    gap: 16px;
+    mix-blend-mode: hard-light;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    gap: 8px;
+}
+
+.left>span {
+    color: white;
+    opacity: 0.8;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    align-self: start;
+    gap: 8px;
+}
+
+p {
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    max-width: 300px;
+    margin: 0;
+    opacity: 0.8;
+    align-self: start;
+}
+
+nav>img {
+    width: 40px;
+    border: none;
+    cursor: pointer;
+    opacity: 0.4;
+
+    transition: 200ms ease-out;
+}
+
+nav>img:hover {
+    opacity: 0.8;
+}
+
+form {
+    width: 400px;
+    height: 40px;
+
+    opacity: 0.4;
+}
+
+form>input[type="text"] {
+    margin-left: 16px;
+}
+
+#nft {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 10px;
+    gap: 32px;
+}
+
+.image {
+    width: 300px;
+    height: 300px;
+    border-radius: 16px;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+
+    overflow: hidden;
+}
+
+.image>img {
+    width: 300px;
+
+    transition: 200ms;
+    transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+    object-position: center center;
+}
+
+.image>img:hover {
+    transform: scale(1.1);
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px;
+    gap: 16px;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding: 0px;
+    gap: 2px;
+
+}
+
+h1 {
+    font-size: 32px;
+    font-weight: bolder;
+    color: white;
+    margin: 0;
+}
+
+.collection,
+.address {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    gap: 8px;
+
+    max-width: 200px;
+
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    font-style: 16px;
+    font-weight: bold;
+
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.6);
+
+    transition: 200ms ease-out;
+    cursor: pointer;
+}
+
+.collection {
+    overflow: visible;
+}
+
+.address:hover {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.address .popuptext {
+    position: absolute;
+    visibility: hidden;
+    width: 160px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    text-align: center;
+    border-radius: 16px;
+    padding: 8px 16px;
+    position: absolute;
+    z-index: 1;
+    bottom: 16px;
+    left: 50%;
+    margin-left: -80px;
+    animation: fadeOut 300ms forwards;
+    transition: 200ms;
+}
+
+.address .show {
+    visibility: visible;
+    animation: fadeIn 200ms;
+}
+
+article {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px;
+    gap: 8px;
+
+    min-width: 300px;
+
+    background: rgba(255, 255, 255, 0.1);
+    mix-blend-mode: hard-light;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(5px);
+
+    border-radius: 8px;
+}
+
+article>h1 {
+    font-size: 24px;
+}
+
+.attr {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 8px;
+
+    font-weight: 700;
+
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.attr-name {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 4px 8px;
+    gap: 10px;
+
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+
+    transition: 200ms ease-out;
+    cursor: pointer;
+}
+
+.attr-name:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.notfound {
+    color: white;
+    font-size: 36px;
+    font-weight: bolder;
+    align-self: center;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}

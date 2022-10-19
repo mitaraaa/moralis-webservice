@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/65602849a3.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../static/nft.css">
+    <link rel="icon" href="https://solanart.io/solanart-logo.svg">
+    <title>{{ nft.name }}</title>
+</head>
+
+<body>
+    <div id="main">
+        <nav>
+            <img src="https://solanart.io/solanart-logo.svg" onclick="window.location = '/';">
+            <form action="" method="get">
+                <input type="text" name="address" onfocus="toggleForm()" onblur="toggleForm()"
+                    placeholder="Enter address here...">
+                <button type="submit" value="Submit">Find</button>
+            </form>
+        </nav>
+        <div id="nft">
+            <div class="left">
+                <div class="image">
+                    <img src="{{ nft.image }}">
+                </div>
+                {% if nft.from_cache %}
+                <span><i class="fa-solid fa-server"></i>From cache</span>
+                {% endif %}
+            </div>
+            <section>
+                <header>
+                    <a class="collection" href="{{ nft.url }}">{{ nft.collection }}</a>
+                    <h1>{{ nft.name }}</h1>
+                    <span class="address" onclick="popup()" onclick="copyToClipboard()">
+                        <i class="fa-solid fa-copy"></i>
+                        <span class="popuptext" id="popup">Copied to clipboard!</span>
+                    </span>
+                </header>
+                {% if nft.description %}
+                <article>
+                    <h1>Description</h1>
+                    <p>{{ nft.description }}</p>
+                </article>
+                {% endif %}
+                {% if nft.attributes %}
+                <article>
+                    <h1>Attributes</h1>
+                    {% for attribute in nft.attributes %}
+                    <div class="attr">
+                        <span class="attr-name">{{ attribute.trait_type }}</span>
+                        :
+                        {{ attribute.value }}
+                    </div>
+                    {% endfor %}
+                </article>
+                {% endif %}
+            </section>
+        </div>
+    </div>
+    <script>
+        const address = "{{ nft.address }}";
+
+        function popup() {
+            const popup = document.getElementById("popup");
+            popup.classList.add("show");
+
+            setTimeout(() => {
+                popup.classList.remove("show");
+            }, 1000);
+        }
+
+        function copyToClipboard() {
+            navigator.clipboard.writeText();
+        }
+
+        function toggleForm() {
+            const form = document.querySelector("form");
+            form.classList.toggle("active");
+        }
+
+        const text = address.substring(0, 5) + "..." + address.substring(address.length - 3, address.length);
+        const span = document.querySelector(".address");
+        span.append(text);
+    </script>
+</body>
+
+</html>

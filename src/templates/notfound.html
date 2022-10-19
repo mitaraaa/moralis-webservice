@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/65602849a3.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../static/nft.css">
+    <link rel="icon" href="https://solanart.io/solanart-logo.svg">
+    <title>404 Not Found</title>
+</head>
+
+<body>
+    <div id="main">
+        <nav>
+            <img src="https://solanart.io/solanart-logo.svg" onclick="window.location = '/';">
+            <form action="" method="get">
+                <input type="text" name="address" onfocus="toggleForm()" onblur="toggleForm()"
+                    placeholder="Enter address here...">
+                <button type="submit" value="Submit">Find</button>
+            </form>
+        </nav>
+        <div id="nft">
+            <span class="notfound">404, maybe try different link?</span>
+        </div>
+    </div>
+
+    <script>
+        function toggleForm() {
+            const form = document.querySelector("form");
+            form.classList.toggle("active");
+        }
+    </script>
+</body>
+
+</html>
