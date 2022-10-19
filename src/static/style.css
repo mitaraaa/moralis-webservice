@@ -19,7 +19,7 @@ body {
 
     background-color: #121212;
     background-position: center;
-    background-image: url("../static/background.png");
+    background-image: url("../static/background.webp");
 
     display: flex;
     flex-direction: column;
