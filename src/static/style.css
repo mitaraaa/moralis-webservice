@@ -1,7 +1,8 @@
 @import url("./font/stylesheet.css");
 
 * {
-    font-family: "Nexa";
+    font-family: "Nexa", sans-serif;
+    font-display: fallback;
 }
 
 html {
