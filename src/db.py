@@ -10,7 +10,7 @@ class Database:
         )
         self.db.autocommit = True
 
-    def find(self, address: str) -> dict | None:
+    def find(self, address: str) -> dict:
         with self.db.cursor(cursor_factory=DictCursor) as cursor:
             cursor.execute("SELECT * FROM solana WHERE address=%s", (address,))
             item = cursor.fetchone()
